@@ -68,6 +68,38 @@ class Post extends Model
 }
 ```
 
+### Automatic Slug Generation
+
+```php
+// Slug is automatically generated when creating/updating
+$post = Post::create([
+    'title' => 'My Blog Post',
+    'content' => 'This is the content...'
+]);
+
+// Slug will be: 'my-blog-post'
+echo $post->slug;
+```
+
+### Manual Slug Generation
+
+```php
+// Generate slug manually
+$post = new Post(['title' => 'Another Great Post']);
+$post->generateSlug();
+```
+
+### Unique Slug Handling
+
+```php
+// If a slug already exists, it will be made unique:
+// "my-post" -> "my-post-1" -> "my-post-2" etc.
+
+$post1 = Post::create(['title' => 'My Post']);  // slug: "my-post"
+$post2 = Post::create(['title' => 'My Post']);  // slug: "my-post-1"
+$post3 = Post::create(['title' => 'My Post']);  // slug: "my-post-2"
+```
+
 ## Requirements
 
 - PHP ^8.1
