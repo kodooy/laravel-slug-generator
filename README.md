@@ -86,7 +86,7 @@ echo $post->slug;
 ```php
 // Generate slug manually
 $post = new Post(['title' => 'Another Great Post']);
-$post->generateSlug();
+$post->slug = $post->generateSlug();
 ```
 
 ### Unique Slug Handling
