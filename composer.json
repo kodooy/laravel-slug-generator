@@ -1,0 +1,45 @@
+{
+    "name": "kodooy/laravel-slug-generator",
+    "description": "Laravel package for automatic slug generation using traits",
+    "keywords": ["laravel", "slug", "eloquent", "trait"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pl78",
+            "email": "manager@kodooy.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/database": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^9.0|^10.0|^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kodooy\\SlugGenerator\\SlugGeneratorServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Kodooy\\SlugGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kodooy\\SlugGenerator\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --no-logging",
+        "test-verbose": "./vendor/bin/phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
